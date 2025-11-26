@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <title>VEXROA — Digital Creator Studio</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script defer src="assets/js/main.js"></script>
+  </head>
+  <body data-page="home">
+    <header class="site-header">
+      <div class="container navbar">
+        <a href="index.html" class="logo-area">
+          <img src="assets/images/logo.png" alt="VEXROA" class="logo" />
+          <span class="brand">VEXROA</span>
+        </a>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="nav-right">
+           <a href="admin/login.html" class="nav-admin-link">Admin</a>
+          <button id="themeToggle" class="theme-toggle" type="button">
+            🌙
+          </button>
+          <button
+            class="menu-btn"
+            type="button"
+            onclick="toggleMenu()"
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+      <div id="mobileMenu" class="mobile-menu">
+        <a href="index.html" class="active">Home</a>
+        <a href="services.html">Services</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-inner reveal">
+          <div>
+            <h1 class="hero-title">
+              Building Digital Experiences<br />That Perform &amp; Inspire
+            </h1>
+            <p class="hero-sub">
+              Clean code, premium UI, and real-world tech — crafted for
+              students, creators and growing brands.
+            </p>
+            <div class="hero-actions">
+              <a href="services.html" class="btn-primary">Explore Services</a>
+              <a href="contact.html" class="btn-outline">Start a Project</a>
+            </div>
+          </div>
+
+          <div class="hero-card hero-slider">
+            <div class="hero-slide active">
+              <img src="assets/images/slider.jpg" alt="Workspace" />
+            </div>
+            <div class="hero-slide">
+              <img src="assets/images/slider1.jpg" alt="Design mockups" />
+            </div>
+            <div id="heroDots" class="hero-dots"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="home-section stats-section">
+        <div class="container reveal stats-grid">
+          <div class="stat-card">
+            <h3 data-counter="90000">0</h3>
+            <p>Users Reached</p>
+          </div>
+          <div class="stat-card">
+            <h3 data-counter="350">0</h3>
+            <p>Projects &amp; Experiments</p>
+          </div>
+          <div class="stat-card">
+            <h3>24/7</h3>
+            <p>Support Available</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="home-section">
+        <div class="container reveal">
+          <h2 class="section-title">What We Do</h2>
+          <div class="home-grid">
+            <article class="home-card">
+              <h3>Modern Websites</h3>
+              <p>
+                High-performance, responsive websites that look premium
+                on both desktop and mobile.
+              </p>
+            </article>
+            <article class="home-card">
+              <h3>Admin &amp; Blog Systems</h3>
+              <p>
+                Custom dashboards powered by Firebase, with easy post
+                management for non-technical users.
+              </p>
+            </article>
+            <article class="home-card">
+              <h3>Automation &amp; Tools</h3>
+              <p>
+                Tailor-made utilities to simplify workflows, track
+                content and integrate with external services.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonial-section home-section">
+        <div class="container reveal">
+          <h2 class="section-title">What People Say</h2>
+          <div class="testimonial-slider">
+            <button class="testimonial-nav prev" type="button">‹</button>
+            <div class="testimonial-track">
+              <article class="testimonial-slide active">
+                <p class="testimonial-quote">
+                  “Fast delivery, premium look, clean UI. Exactly what I
+                  needed for my startup.”
+                </p>
+                <div class="testimonial-author"> Startup Founder</div>
+              </article>
+              <article class="testimonial-slide">
+                <p class="testimonial-quote">
+                  “Admin panel feels like a real CMS. Posting updates is
+                  super easy.”
+                </p>
+                <div class="testimonial-author"> College Tech Lead</div>
+              </article>
+              <article class="testimonial-slide">
+                <p class="testimonial-quote">
+                  “VEXROA makes side projects look like professional
+                  products. Love the aesthetic.”
+                </p>
+                <div class="testimonial-author"> Digital Creator</div>
+              </article>
+            </div>
+            <button class="testimonial-nav next" type="button">›</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <img src="assets/images/logo.png" alt="VEXROA" class="logo" />
+          <span>VEXROA</span>
+        </div>
+        <div class="footer-copy">
+          © <span id="yearSpan"></span> VEXROA — All rights reserved.
+        </div>
+        <div class="footer-links">
+          <a href="https://instagram.com" target="_blank">Instagram</a>
+          <a href="https://www.linkedin.com/in/vishalmahato " target="_blank">LinkedIn</a>
+          <a href="https://youtube.com" target="_blank">YouTube</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

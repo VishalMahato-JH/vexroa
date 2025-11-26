@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <title>Contact – VEXROA</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script defer src="assets/js/main.js"></script>
+  </head>
+  <body data-page="contact">
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="container navbar">
+        <a href="index.html" class="logo-area">
+          <img src="assets/images/logo.png" alt="VEXROA" class="logo" />
+          <span class="brand">VEXROA</span>
+        </a>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="nav-right">
+           <a href="admin/login.html" class="nav-admin-link">Admin</a>
+          <button id="themeToggle" class="theme-toggle" type="button">
+            🌙
+          </button>
+          <button
+            class="menu-btn"
+            type="button"
+            onclick="toggleMenu()"
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+      <div id="mobileMenu" class="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="page-main">
+      <div class="container reveal">
+        <h1>Contact</h1>
+        <p>
+          Have an idea, project or collaboration in mind? Share a few
+          details and we’ll get back to you with possibilities.
+        </p>
+      </div>
+
+      <div class="container contact-layout reveal">
+        <div>
+          <div class="contact-card">
+            <span class="contact-label">Email</span>
+            <span class="contact-value"><a href="mailto:mahatovishal567@gmail.com">hello@vexroa.in</a></span>
+          </div>
+          <div class="contact-card">
+            <span class="contact-label">Instagram</span>
+            <span class="contact-value"><a href="https://instagram.com/vexroa" target="_blank" rel="noopener"> @vexroa
+            </a></span>
+          </div>
+          <div class="contact-card">
+            <span class="contact-label">Location</span>
+            <span class="contact-value">• Dhanbad-Jharkhand • India </span>
+          </div>
+          
+        </div>
+
+        <div class="contact-form-card">
+          <h3>Send a quick message</h3>
+          <form id="contactForm" class="contact-form">
+  <label>
+    Name
+    <input type="text" id="contactName" placeholder="Your name" required />
+  </label>
+
+  <label>
+    Email
+    <input type="email" id="contactEmail" placeholder="you@example.com" required />
+  </label>
+
+  <label>
+    Message
+    <textarea id="contactMessage" rows="4" placeholder="Tell us a bit about your idea..." required></textarea>
+  </label>
+
+  <button type="submit" class="btn-primary">Send</button>
+  <p id="contactStatus" class="form-status"></p>
+</form>
+
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <img src="assets/images/logo.png" alt="VEXROA" class="logo" />
+          <span>VEXROA</span>
+        </div>
+        <div class="footer-copy">
+          © <span id="yearSpan"></span> VEXROA — All rights reserved.
+        </div>
+        <div class="footer-links">
+          <a href="https://instagram.com" target="_blank">Instagram</a>
+          <a href="https://www.linkedin.com/in/vishalmahato " target="_blank">LinkedIn</a>
+          <a href="https://youtube.com" target="_blank">YouTube</a>
+        </div>
+      </div>
+    </footer>
+    <script src="assets/js/contact.js"></script>
+  </body>
+</html>

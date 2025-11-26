@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <title>Services – VEXROA</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script defer src="assets/js/main.js"></script>
+  </head>
+  <body data-page="services">
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="container navbar">
+        <a href="index.html" class="logo-area">
+          <img src="assets/images/logo.png" alt="VEXROA" class="logo" />
+          <span class="brand">VEXROA</span>
+        </a>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html" class="active">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="nav-right">
+           <a href="admin/login.html" class="nav-admin-link">Admin</a>
+          <button id="themeToggle" class="theme-toggle" type="button">
+            🌙
+          </button>
+          <button
+            class="menu-btn"
+            type="button"
+            onclick="toggleMenu()"
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+      <div id="mobileMenu" class="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="page-main">
+      <div class="container reveal">
+        <h1>Services</h1>
+        <p>
+          VEXROA focuses on fast, clean builds that give you a premium
+          presence without wasting time on unnecessary features. You get
+          exactly what you need &mdash; and a codebase you can grow
+          later.
+        </p>
+      </div>
+
+      <section class="home-section">
+        <div class="container reveal home-grid">
+          <article class="home-card">
+            <h3>Landing &amp; Portfolio Sites</h3>
+            <p>
+              One-page or multi-section sites tailored for students,
+              creators and small businesses. Optimised for clarity,
+              speed and storytelling.
+            </p>
+          </article>
+          <article class="home-card">
+            <h3>Blog + Admin Panels</h3>
+            <p>
+              Blog systems powered by Firebase, with a simple admin
+              panel where you can log in, create posts, add images and
+              publish content like a real CMS.
+            </p>
+          </article>
+          <article class="home-card">
+            <h3>Custom Tools &amp; Dashboards</h3>
+            <p>
+              Small dashboards, trackers and internal tools that help
+              manage content, basic analytics and workflows.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="home-section">
+        <div class="container reveal home-grid">
+          <article class="home-card">
+            <h3>Responsive Design</h3>
+            <p>
+              Layouts tested across desktop, tablet and mobile devices
+              so everything feels consistent and polished.
+            </p>
+          </article>
+          <article class="home-card">
+            <h3>Clean Code Structure</h3>
+            <p>
+              Organized HTML, CSS and JS with no duplicate clutter, so
+              other developers (or future you) can understand it easily.
+            </p>
+          </article>
+          <article class="home-card">
+            <h3>Long-Term Ready</h3>
+            <p>
+              Built with growth in mind. Start small, then extend later
+              with new pages, features and integrations.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <img src="assets/images/logo.png" alt="VEXROA" class="logo" />
+          <span>VEXROA</span>
+        </div>
+        <div class="footer-copy">
+          © <span id="yearSpan"></span> VEXROA — All rights reserved.
+        </div>
+        <div class="footer-links">
+          <a href="https://instagram.com" target="_blank">Instagram</a>
+          <a href="https://www.linkedin.com/in/vishalmahato " target="_blank">LinkedIn</a>
+          <a href="https://youtube.com" target="_blank">YouTube</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

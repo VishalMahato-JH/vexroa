@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <title>Admin Dashboard – VEXROA</title>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script defer src="../assets/js/admin.js"></script>
+  </head>
+  <body class="admin-body" data-page="admin-dashboard">
+    <header class="admin-topbar">
+  <div class="admin-top-title">VEXROA Admin Dashboard</div>
+  <div class="admin-top-actions">
+    <button type="button" class="admin-top-btn" onclick="window.location.href='../index.html'">
+      Home
+    </button>
+    <button type="button" class="admin-top-btn" onclick="window.location.href='new-post.html'">
+      New Post
+    </button>
+    <button type="button" id="logoutBtn" class="admin-top-btn outline">
+      Logout
+    </button>
+  </div>
+</header>
+
+
+    <main class="admin-main">
+  <h1>Posts</h1>
+    <div class="admin-search-row">
+    <input
+      type="text"
+      id="postSearchInput"
+      class="admin-search-input"
+      placeholder="Search posts by title or date..."
+    />
+  </div>
+  <div class="admin-stats-row">
+    <div class="admin-stat-card">
+      <div class="admin-stat-label">Total Posts</div>
+      <div class="admin-stat-value" id="statTotalPosts">2</div>
+    </div>
+    <div class="admin-stat-card">
+      <div class="admin-stat-label">Latest Tag</div>
+      <div class="admin-stat-value">Tech</div>
+    </div>
+    <div class="admin-stat-card">
+      <div class="admin-stat-label">Status</div>
+      <div class="admin-stat-value">Live</div>
+    </div>
+  </div>
+
+  <div class="admin-card admin-card-wide">
+    <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Created</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="postsTableBody"></tbody>
+        </table>
+      </div>
+    </main>
+  </body>
+</html>

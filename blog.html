@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Blog – VEXROA</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script defer src="assets/js/main.js"></script>
+  </head>
+  <body data-page="blog">
+    <header class="site-header">
+      <div class="container navbar">
+        <a href="index.html" class="logo-area">
+          <img src="assets/images/logo.png" alt="VEXROA" class="logo" />
+          <span class="brand">VEXROA</span>
+        </a>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html" class="active">Blog</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="nav-right">
+           <a href="admin/login.html" class="nav-admin-link">Admin</a>
+          <button id="themeToggle" class="theme-toggle" type="button">
+            🌙
+          </button>
+          <button
+            class="menu-btn"
+            type="button"
+            onclick="toggleMenu()"
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+      <div id="mobileMenu" class="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <div class="container">
+        <h1>Blog</h1>
+        <p class="muted-text">
+          Articles, updates and notes from VEXROA projects and experiments.
+        </p>
+
+        <!-- SEARCH BAR -->
+    <input
+      type="text"
+      id="blogSearchInput"
+      class="blog-search-input"
+      placeholder="Search articles by title or category..."
+    />
+
+        <div id="blogList" class="blog-list"></div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <img src="assets/images/logo.png" alt="VEXROA" class="logo" />
+          <span>VEXROA</span>
+        </div>
+        <div class="footer-copy">
+          © <span id="yearSpan"></span> VEXROA — All rights reserved.
+        </div>
+        <div class="footer-links">
+          <a href="https://instagram.com" target="_blank">Instagram</a>
+          <a href="https://www.linkedin.com/in/vishalmahato " target="_blank">LinkedIn</a>
+          <a href="https://youtube.com" target="_blank">YouTube</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <title>New Post – VEXROA</title>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/tinymce@6/tinymce.min.js"></script>
+
+    <script defer src="../assets/js/admin.js"></script>
+  </head>
+  <body class="admin-body" data-page="admin-new-post">
+    <header class="admin-topbar">
+  <div class="admin-top-title">Create New Post</div>
+  <div class="admin-top-actions">
+    <button type="button" class="admin-top-btn" onclick="window.location.href='../index.html'">
+      Home
+    </button>
+    <button type="button" class="admin-top-btn" onclick="window.location.href='dashboard.html'">
+      Back to Dashboard
+    </button>
+    <button type="button" id="logoutBtn" class="admin-top-btn outline">
+      Logout
+    </button>
+  </div>
+</header>
+
+
+    <main class="admin-main">
+      <form id="newPostForm" class="admin-form">
+        <label>
+          Title
+          <input
+            type="text"
+            id="postTitle"
+            class="admin-full"
+            placeholder="Post title"
+            required
+          />
+        </label>
+        <label>
+          Short Excerpt
+          <textarea
+            id="postExcerpt"
+            rows="2"
+            class="admin-full"
+            placeholder="Short summary for blog cards"
+            required
+          ></textarea>
+        </label>
+        <label>
+          Tag (Category)
+          <input
+            type="text"
+            id="postTag"
+            class="admin-full"
+            placeholder="e.g. Tech, Guide, News"
+          />
+        </label>
+        <label>
+          Content
+          <textarea
+            id="postContent"
+            class="admin-full"
+            rows="8"
+          ></textarea>
+        </label>
+        <button type="submit" id="saveBtn" class="btn-primary admin-full">
+          Publish Post
+        </button>
+        <p id="saveStatus" class="form-status"></p>
+      </form>
+    </main>
+
+    <script>
+      // Rich editor without Firebase Storage – images saved as base64
+document.addEventListener("DOMContentLoaded", function () {
+  tinymce.init({
+    selector: "#postContent",
+    plugins: "image link media lists code fullscreen",
+    toolbar:
+      "undo redo | styles | bold italic underline | alignleft aligncenter alignright | bullist numlist | link image media | code fullscreen",
+    menubar: false,
+    height: 420,
+
+    // 🔹 Firebase upload nahi – bas local image ko base64 bana ke editor me daalenge
+    automatic_uploads: false,
+    file_picker_types: "image",
+
+    file_picker_callback: function (cb, value, meta) {
+      if (meta.filetype !== "image") return;
+
+      const input = document.createElement("input");
+      input.type = "file";
+      input.accept = "image/*";
+
+      input.onchange = function () {
+        const file = this.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          const base64 = e.target.result; // "data:image/...;base64,AAAA"
+          cb(base64, { title: file.name });
+        };
+        reader.readAsDataURL(file);
+      };
+
+      input.click();
+    },
+  });
+});
+
+</script>
+
+  </body>
+</html>

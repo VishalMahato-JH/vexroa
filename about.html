@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <title>About – VEXROA</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    />
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script defer src="assets/js/main.js"></script>
+  </head>
+  <body data-page="about">
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="container navbar">
+        <a href="index.html" class="logo-area">
+          <img src="assets/images/logo.png" alt="VEXROA" class="logo" />
+          <span class="brand">VEXROA</span>
+        </a>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="nav-right">
+           <a href="admin/login.html" class="nav-admin-link">Admin</a>
+          <button id="themeToggle" class="theme-toggle" type="button">
+            🌙
+          </button>
+          <button
+            class="menu-btn"
+            type="button"
+            onclick="toggleMenu()"
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+      <div id="mobileMenu" class="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="page-main">
+      <div class="container reveal">
+        <h1>About VEXROA</h1>
+        <p>
+          VEXROA is a small digital studio focused on building clean,
+          fast and modern web experiences. The goal is simple: make
+          student projects, side hustles and local brands look and feel
+          like real products.
+        </p>
+        <p>
+          Instead of heavy, confusing templates, VEXROA focuses on
+          minimal layouts, strong typography and smart use of color.
+          Every page is designed to be readable, easy to maintain and
+          fast to load.
+        </p>
+      </div>
+
+      <section class="home-section">
+        <div class="container reveal home-grid">
+          <article class="home-card">
+            <h3>Why this exists</h3>
+            <p>
+              It started as a way to practice real-world web
+              development. Over time it became a proper system with
+              admin panel, blog and reusable components.
+            </p>
+          </article>
+          <article class="home-card">
+            <h3>How we build</h3>
+            <p>
+              HTML, CSS and JavaScript at the core, powered by Firebase
+              for data and storage. No unnecessary complexity &mdash;
+              just a stack that is easy to move and scale.
+            </p>
+          </article>
+          <article class="home-card">
+            <h3>What you get</h3>
+            <p>
+              A premium-looking website, a working admin panel to manage
+              content, and clean code that you can actually read and
+              modify later.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <img src="assets/images/logo.png" alt="VEXROA" class="logo" />
+          <span>VEXROA</span>
+        </div>
+        <div class="footer-copy">
+          © <span id="yearSpan"></span> VEXROA — All rights reserved.
+        </div>
+        <div class="footer-links">
+          <a href="https://instagram.com" target="_blank">Instagram</a>
+          <a href="https://www.linkedin.com/in/vishalmahato" target="_blank">LinkedIn</a>
+          <a href="https://youtube.com" target="_blank">YouTube</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
